@@ -1,0 +1,59 @@
+body{
+    position: relative;
+    height: 150vh;
+    background-color: rgb(109, 15, 163);
+}
+
+#slider {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    overflow: hidden;
+    margin: 100px auto 0px auto;
+}
+
+#left, #right {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+}
+
+#left a, #right a {
+    cursor: pointer;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: rgb(2, 2, 2);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+#right {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.Previous:hover, .Next:hover {
+    background-color: #31a714;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin:20px 10px;
+    background-color: rgb(168, 139, 182);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #c51d1d;
+}
+

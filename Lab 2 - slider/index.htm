@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="slider">
+        
+
+            <div class="slides fade">
+                <img src="./zdjecia/jpg1.PNG" >
+            </div>
+
+            <div class="slides fade">
+                <img src="./zdjecia/jpg2.jpg" >
+            </div>
+
+            <div class="slides fade">
+                <img src="./zdjecia/jpg3.JPG" >
+            </div>
+
+            <div class="slides fade">
+                <img src="./zdjecia/jpg4.jpg" >
+            </div>
+
+            <div class="slides fade">
+                <img src="./zdjecia/jpg5.JPG" >
+            </div>
+
+            <div class="slides fade">
+                <img src="./zdjecia/jpg6.JPG" >
+            </div>
+
+            <div id="left">
+                <a class="Previous" onclick="plusSlides(-1)">&#10092;</a>
+            </div>
+
+            <div id="right">
+                <a class="Next" onclick="plusSlides(1)">&#10093;</a>
+            </div>
+        </div>
+
+            <div style="text-align:center">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
