@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>NoteKeep</title>
+</head>
+
+<body>
+   
+        <div class="topButtons">
+            <button  id="AddNoteButton"> Dodaj Notatke </button>
+        </div>
+    
+    <div>
+        <div class="NotesBox">
+            <div class="note" id="exampleNote">
+                <h2 class="NoteName">Nazwa</h2>
+                <p class="NoteDate">Data</p>
+                <p class="NoteTekst">Tresc</p>
+            </div>
+            <h2>Przypiete Notatki:</h2>
+            <div id="ImportantNotes" class="NotesGrid breakLine">
+            </div>
+            <h2>Notatki:</h2>
+            <div id="CommonNotes" class="NotesGrid">
+            </div>
+        </div>
+        
+        <div class="NoteBackground">
+            <div class="NoteBox">
+                <div class="NoteTitle">
+                    <input type="checkbox" id="NoteImportantInfo">
+                    <input type="text" placeholder="Nazwa:" id="NoteTitleInfo">
+                    <input type="color" id="colorChose" value="#5dd1de">
+                </div>
+                <div class="NoteContent">
+                    <textarea  id="textPlace" placeholder="Pole tekstowe"></textarea>
+                </div>
+                <div class="NoteButtons">
+                    <button class="NoteButtonBin" id="SaveButton"> Zapisz</button>
+                    <button class="NoteButtonBin" id="CancelButton"> Anuluj</button>
+                    <button class="NoteButtonBin" id="DeleteButton"> Usun </button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js" type="module"></script>
+</body>
+</html>
