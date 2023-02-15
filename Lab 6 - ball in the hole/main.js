@@ -1,10 +1,10 @@
-const gameBoard = document.querySelector(".playBoard");
+const playBoard = document.querySelector(".play_board");
 let hole;
-let timer = document.getElementById("timer");
+let stopwatch = document.getElementById("stopwatch");
 let ball = document.querySelector("#ball");
-let container = document.getElementsByClassName("container")[0];
-let information = document.getElementById("informationText");
-let buttonStart = document.getElementById("start");
+let bin = document.getElementsByClassName("bin")[0];
+let rules = document.getElementById("rulesForm");
+let btnStart = document.getElementById("start");
 let score1 = document.getElementById("score");
 let score = 0;
 let ballY, ballX;
@@ -17,22 +17,22 @@ let s = -1;
 let highScore = 0;
 let highScore1 = document.querySelector("#highscore")
 let minW = 40;
-let maxW = minW + parseInt(gameBoard.offsetWidth) - 85;
+let maxW = minW + parseInt(playBoard.offsetWidth) - 85;
 let minH = 150;
-let maxH = minH + parseInt(gameBoard.offsetHeight) - 85;
+let maxH = minH + parseInt(playBoard.offsetHeight) - 85;
 
-const maxY = gameBoard.clientWidth - ball.clientWidth;
-const maxX = gameBoard.clientHeight - ball.clientHeight;
+const maxY = playBoard.clientWidth - ball.clientWidth;
+const maxX = playBoard.clientHeight - ball.clientHeight;
 
-console.log(typeof(gameBoard.offsetHeight));
-console.log(typeof(gameBoard.offsetWidth));
+console.log(typeof(playBoard.offsetHeight));
+console.log(typeof(playBoard.offsetWidth));
 
-window.addEventListener("orientation", moveBall)
+window.addEventListener("deviceorientation", moveBall)
 
 function start() {
   putHole();
   console.log(posX, posY, ballX, ballY);
-  information.style.visibility = "hidden";
+  rules.style.visibility = "hidden";
   ball.style.visibility = "visible";
 
   counter();
@@ -41,7 +41,7 @@ function start() {
   }, 1000);
 }
 
-buttonStart.addEventListener("click", start);
+btnStart.addEventListener("click", start);
 
 function counter() {
   s++;
@@ -58,51 +58,28 @@ function counter() {
   displayTime();
 }
 
+function checkCollision(ball, hole){
+  const ballX = parseInt(ball.style.left)
+  const ballY = parseInt(ball.style.top)
+  const holeX = parseInt(hole.style.left)
+  const holeY = parseInt(hole.style.top)
 
-function moveBall(e) {
-  let x = e.beta;
-  let y = e.gamma;
+  if (
+    ballY < holeY + 20 &&
+    ballY > holeY - 20 &&
+    ballX < holeX + 20 &&
+    ballX > holeX - 20
+  ){
+    score++
+    score1.textContent=`${score}`
 
-  if (x > 90) x = 90;
-  if (x < -90) x = -90;
-
-  x += 90;
-  y += 90;
-
-  ball.style.top = `${(maxY * y) / 180}px`;
-  ball.style.left = `${(maxX * x) / 180}px`;
-  checkCollision(ball, hole)
-}
-
-function displayTime() {
-    let time;
-    if (s < 10) {
-      displayS = "0" + s;
-    } else displayS = s;
-    if (m < 10) {
-      displayM = "0" + m;
-    } else displayM = m;
-    time = displayM + ":" + displayS;
-    timer.innerHTML = time;
+    hole.remove()
+    putHole()
   }
-
-function putHole() {
-  hole = document.createElement("div");
-  hole.classList.add("hole");
-  hole.style.visibility = "visible";
-
-  let rndW = Math.random()* (gameBoard.clientWidth - 75)
-  let rndH = Math.random()* (gameBoard.clientHeight - 75)
-  console.log(rndH)
-  console.log(rndW)
-
-  hole.style.left = rndW + "px";
-  hole.style.top = rndH + "px";
-  container.appendChild(hole);
 }
 
 function collisionDone() {
-    let info = `Koniec! Twoj wynik: ${score}`;
+    let info = `Two wynik to: ${score}`;
     if(score >= highScore){
       highScore = score 
       highScore1.textContent = highScore;
@@ -113,24 +90,40 @@ function collisionDone() {
     alert(info);
 }
 
-function checkCollision(ball, hole){
-    const ballX = parseInt(ball.style.left)
-    const ballY = parseInt(ball.style.top)
-  
-    const holeX = parseInt(hole.style.left)
-    const holeY = parseInt(hole.style.top)
-  
-    if (
-      ballY < holeY + 20 &&
-      ballY > holeY - 20 &&
-      ballX < holeX + 20 &&
-      ballX > holeX - 20
-    ){
-      score++
-      score1.textContent=`${score}`
-  
-      hole.remove()
-      putHole()
-    }
-  }
-  
+function moveBall(e) {
+  let x = e.beta;
+  let y = e.gamma;
+  if (x > 90) x = 90;
+  if (x < -90) x = -90;
+  x += 90;
+  y += 90;
+  ball.style.top = `${(maxY * y) / 180}px`;
+  ball.style.left = `${(maxX * x) / 180}px`;
+  checkCollision(ball, hole)
+}
+
+
+function putHole() {
+  hole = document.createElement("div");
+  hole.classList.add("hole");
+  hole.style.visibility = "visible";
+  let rndW = Math.random()* (playBoard.clientWidth - 75)
+  let rndH = Math.random()* (playBoard.clientHeight - 75)
+  console.log(rndH)
+  console.log(rndW)
+  hole.style.left = rndW + "px";
+  hole.style.top = rndH + "px";
+  bin.appendChild(hole);
+}
+
+function displayTime() {
+  let time;
+  if (s < 10) {
+    displayS = "0" + s;
+  } else displayS = s;
+  if (m < 10) {
+    displayM = "0" + m;
+  } else displayM = m;
+  time = displayM + ":" + displayS;
+  stopwatch.innerHTML = time;
+}

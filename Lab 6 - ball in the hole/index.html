@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Ball In The Hole</title>
 </head>
+
 <body>
-    <div class="scoreboard">
-      <div>Czas: <span id="timer">00:00</span></div>
-      <div id="scoreBin">Wynik: <span id="score">0</span></div>
-      <div>Najlepszy wynik: <span id="highscore">0</span></div>
+    <div class="score_board">
+      <div id="stopwatch_bin">Czas: <span id="stopwatch">00:00</span></div>
+      <div id="score_bin">Wynik: <span id="score">0</span></div>
+      <div id="highscore_bin">Najlepszy wynik: <span id="highscore">0</span></div>
     </div>
-    <div class="playBoard">
-      <div id="informationText">
+
+    <div class="play_board">
+      <div id="rulesForm">
         <h1>
-          Sprawdz ile razy jestes w stanie trafic do dziury w minute!
+         Kliknij przycisk "Start"! aby zacząć rozgrywkę!<br />Traf do dziury jak najwięcej razy w ciągu minuty<br />
         </h1>
-        <button id="start">Start</button>
+        <button id="start">Start!</button>
       </div>
-      <div class="container">
+      <div class="bin">
         <div id="ball"></div>
       </div>
     </div>
