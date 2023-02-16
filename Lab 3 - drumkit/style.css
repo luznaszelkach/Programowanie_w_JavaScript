@@ -1,0 +1,112 @@
+body{
+    background-color: rgb(108, 204, 89);
+    box-sizing: border-box;
+}
+
+.drumkit__bin{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.drumkit__buttons{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;   
+}
+
+.drumkit__buttons .title{
+    color: rgb(0, 0, 0);
+    padding: 2px;
+}
+
+
+.drumkit__buttons div{
+    width: 75px;
+    height: 75px;
+    color: black;
+    padding: 30px;
+    margin: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: 1px solid white;
+    outline: none;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(25, 0, 255, 0.384);
+}
+
+.playing{
+    font-size: 1.1rem !important;
+    border: 1px solid rgb(255, 0, 0) !important;
+}
+
+.drumkit__playandrecordingButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.drumkit__recordButton{
+    width: 70px;
+    height:70px;
+    padding: 30px;
+    margin: 10px;
+    font-size: 1.5rem;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(247, 0, 0);
+    text-align: center;
+}
+
+.drumkit__playButton{
+    width: 70px;
+    height: 70px;
+    padding: 30px;
+    margin: 10px;
+    font-size: 1.5rem;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 0, 200);
+    text-align: center;
+}
+.recordedSounds{
+    margin-top: 1rem;
+    width: 75vw;
+}
+.track{
+    color: white;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    width: 100%;
+    background-color: black;
+    font-size: 1.5rem
+}
+.play{
+    cursor: pointer;
+}
+.recordedSounds div{
+    margin: 1rem
+}
+.play_recordedSounds{
+    display: flex;
+    justify-content: center;
+}

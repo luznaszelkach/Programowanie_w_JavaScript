@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="drumkit__bin">
+        <div class="drumkit__buttons">
+            <div data-key="49" class="noise">
+                <span class="title">Boom</span>
+                <span>1</span>
+            </div>
+            <div data-key="50" class="noise">
+                <span class="title">Clap</span>
+                <span>2</span>
+            </div>
+            <div data-key="51" class="noise">
+                <span class="title">Hihat</span> 
+                <span>3</span>
+            </div>
+            <div data-key="52" class="noise">
+               <span class="title">Kick</span>
+               <span>4</span>
+            </div>
+            <div data-key="53" class="noise">
+                <span class="title">Openhat</span>
+                <span>5</span>
+            </div>
+            <div data-key="54" class="noise">
+                <span class="title">Ride</span> 
+                <span>6</span>
+            </div>
+            <div data-key="55" class="noise">
+                <span class="title">Snare</span>
+                <span>7</span>
+            </div>
+            <div data-key="56" class="noise">
+                <span class="title">Tink</span>
+                <span>8</span>
+            </div>
+            <div data-key="57" class="noise">
+                <span class="title">Tom</span>
+                <span>9</span>
+            </div>
+        </div>
+    
+    <div class="drumkit__playandrecordingButtons">
+        <div class="drumkit__playButton"><span>Graj</span> <span>"Spacja"</span></div>
+        <div class="drumkit__recordButton">Nagraj "R"</div>
+    </div>
+   
+    <div class="recordedSounds">
+    </div>
+    
+    <div class="play__recordedSounds">
+    
+    </div>
+</div>
+
+    <audio data-key="49" src="./sounds/boom.wav" id="boom"></audio>
+    <audio data-key="50" src="./sounds/clap.wav"  id="clap"></audio>
+    <audio data-key="51" src="./sounds/hihat.wav"  id="hihat"></audio>
+    <audio data-key="52" src="./sounds/kick.wav"  id="kick"></audio>
+    <audio data-key="53" src="./sounds/openhat.wav"  id="openhat"></audio>
+    <audio data-key="54" src="./sounds/ride.wav"  id="ride"></audio>
+    <audio data-key="55" src="./sounds/snare.wav"  id="snare"></audio>
+    <audio data-key="56" src="./sounds/tink.wav"  id="tink"></audio>
+    <audio data-key="57" src="./sounds/tom.wav"  id="tom"></audio>
+
+    <script src="main.js"></script>
+  </body>
+</html>
